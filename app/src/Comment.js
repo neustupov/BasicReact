@@ -1,9 +1,6 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-export default class Comment extends Component {
-
-    render() {
-        const {comment} = this.props;
+export default function Comment({comment}) {
 
         return (
             <ul>
@@ -15,5 +12,5 @@ export default class Comment extends Component {
                 </li>
             </ul>
         )
-    }
+
 }
