@@ -1,13 +1,20 @@
 import React, {Component} from 'react';
 import CommentList from './CommentList';
+import PropTypes from 'prop-types';
 
-export default class Article extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            isOpen: false
-        };
-    }
+class Article extends Component {
+
+    static propTypes = {
+        article: PropTypes.shape({
+            id: PropTypes.string.isRequired,
+            title: PropTypes.string.isRequired,
+            text: PropTypes.string
+        }).isRequired
+    };
+
+    state = {
+        isOpen: false
+    };
 
     render() {
         const {article} = this.props;
@@ -43,3 +50,5 @@ export default class Article extends Component {
         })
     };
 }
+
+export default Article
