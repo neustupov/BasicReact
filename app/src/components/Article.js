@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import CommentList from './CommentList';
 import PropTypes from 'prop-types';
+import toggleOpen from '../decorators/toggleOpen';
 
 class Article extends Component {
 
@@ -51,4 +52,4 @@ class Article extends Component {
     };
 }
 
-export default Article
+export default toggleOpen(Article)
