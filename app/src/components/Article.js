@@ -13,18 +13,13 @@ class Article extends Component {
         }).isRequired
     };
 
-    state = {
-        isOpen: false
-    };
-
     render() {
-        const {article} = this.props;
-        const {isOpen} = this.state;
+        const {article, isOpen, toggleOpen} = this.props;
 
         return (
             <div>
                 <h3>{article.title}</h3>
-                <button onClick={this.toggleOpen}>
+                <button onClick={toggleOpen}>
                     {isOpen ? 'Close' : 'Open'}
                 </button>
                 {this.getBody()}
@@ -33,8 +28,8 @@ class Article extends Component {
     }
 
     getBody() {
-        if (!this.state.isOpen) return null;
-        const {article} = this.props;
+        const {article, isOpen} = this.props;
+        if (!isOpen) return null;
         return (
             <div>
                 <section>
@@ -44,12 +39,6 @@ class Article extends Component {
             </div>
         );
     }
-
-    toggleOpen = () => {
-        this.setState({
-            isOpen: !this.state.isOpen
-        })
-    };
 }
 
 export default toggleOpen(Article)
