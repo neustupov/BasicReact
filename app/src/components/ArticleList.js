@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import Article from './Article';
 import PropTypes from 'prop-types';
-import ToggleOpenArticle from '../decorators/toggleOpenArticle';
+import ToggleOpenArticle from '../decorators/accordion';
 
 class ArticleList extends Component{
 
