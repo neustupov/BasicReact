@@ -3,13 +3,11 @@ import React, {Component} from 'react';
 export default (OriginalComponent) => class WrappedComponent extends Component {
 
     state = {
-        isOpen: false,
-        openArticleId: null
+        isOpen: false
     };
 
     render() {
-        return <OriginalComponent {...this.props} {...this.state} toggleOpen={this.toggleOpen}
-                                  toggleOpenArticle={this.toggleOpenArticle}/>
+        return <OriginalComponent {...this.props} {...this.state} toggleOpen={this.toggleOpen}/>
     }
 
     toggleOpen = (ev) => {
@@ -18,10 +16,4 @@ export default (OriginalComponent) => class WrappedComponent extends Component {
             isOpen: !this.state.isOpen
         })
     };
-
-    toggleOpenArticle = openArticleId => ev => {
-        this.setState({
-            openArticleId
-        })
-    }
 }
