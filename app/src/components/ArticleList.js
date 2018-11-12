@@ -6,7 +6,9 @@ import ToggleOpenArticle from '../decorators/toggleOpenArticle';
 class ArticleList extends Component{
 
     static propTypes = {
-        articles: PropTypes.array
+        articles: PropTypes.array,
+        isOpen: PropTypes.bool,
+        toggleOpen: PropTypes.func
     };
 
     render() {

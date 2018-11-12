@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import ArticleList from './ArticleList';
 
 class App extends Component {
-    static propTypes = {};
+    static propTypes = {
+        articles: PropTypes.array
+    };
 
     render() {
         return (
