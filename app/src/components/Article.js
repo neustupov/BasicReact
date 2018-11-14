@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import CommentList from './CommentList';
 import PropTypes from 'prop-types';
-import CSSTransitionGroup from 'react-transition-group/CSSTransition'
+import {CSSTransition} from 'react-transition-group';
+import './article.css';
 
 class Article extends Component {
 
@@ -24,13 +25,17 @@ class Article extends Component {
                 <button onClick={toggleOpenItem}>
                     {isOpen ? 'Close' : 'Open'}
                 </button>
-                <CSSTransitionGroup
-                    timeout={500}
-                    classNames="article"
-                    mountOnEnter={true}
+                <CSSTransition
+                    in={isOpen}
+                    classNames='article'
+                    timeout={{enter: 500, exit: 500}}
+                    component='div'
+                    appear
                 >
-                    {this.getBody()}
-                </CSSTransitionGroup>
+                    <div>
+                        {this.getBody()}
+                    </div>
+                </CSSTransition>
             </div>
         )
     }
@@ -39,12 +44,10 @@ class Article extends Component {
         const {article, isOpen} = this.props;
         if (!isOpen) return null;
         return (
-            <div>
-                <section>
-                    {article.text}
-                    <CommentList comments={article.comments}/>
-                </section>
-            </div>
+            <section>
+                {article.text}
+                <CommentList comments={article.comments}/>
+            </section>
         );
     }
 }
