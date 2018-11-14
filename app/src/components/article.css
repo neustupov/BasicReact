@@ -4,7 +4,7 @@
 
 .article-enter.article-enter-active {
     opacity: 1;
-    transition: opacity 500ms ease-in;
+    transition: opacity 500ms ease-out;
 }
 
 .article-leave {
@@ -13,7 +13,7 @@
 
 .article-leave.article-leave-active {
     opacity: 0.01;
-    transition: opacity 300ms ease-in;
+    transition: opacity 300ms ease-out;
 }
 
 .article-appear {
