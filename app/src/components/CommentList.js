@@ -31,7 +31,7 @@ class CommentList extends Component {
         const {isOpen} = this.props;
         if (!isOpen) return null;
         const {comments} = this.props;
-        if (!comments.length) return <p>No comments yet</p>
+        if (!comments.length) return <p>No comments yet</p>;
 
         return (
             <ul>
