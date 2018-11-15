@@ -39,6 +39,7 @@ class CommentList extends Component {
                 {comments.map(comment => <li key={comment.id}><Comment comment={comment}/></li>)}
                 <br/>
                 <br/>
+
                 <AddCommentForm/>
             </ul>
         )

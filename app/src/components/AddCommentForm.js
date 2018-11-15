@@ -1,22 +1,19 @@
 import React, {Component} from 'react';
+import './AddCommentForm.css'
 
 class AddCommentForm extends Component {
 
     state = {
         user: '',
-        comment: ''
+        comment: '',
+        userValid: '',
+        commentValid: ''
     };
 
-    handleChangeUser = (event) => {
-        this.setState({
-            user: event.target.value
-        });
-    };
-
-    handleChangeComment = (event) => {
-        this.setState({
-            comment: event.target.value
-        });
+    handleChange = (event) => {
+        const name = event.target.name;
+        const value = event.target.value;
+        this.setState({[name]: value});
     };
 
     handleSubmit = (event) => {
@@ -28,17 +25,27 @@ class AddCommentForm extends Component {
         event.preventDefault();
     };
 
-    render() {
+    validate = (user, comment) => {
+        return {
+            user: user.length < 5 || user.length > 15,
+            comment: comment.length < 20 || comment.length > 50,
+        };
+    };
 
+    render() {
+        const errors = this.validate(this.state.user, this.state.comment);
         return (
             <form onSubmit={this.handleSubmit}>
                 <label>
                     User:
-                    <input type="text" name="user" value={this.state.user} onChange={this.handleChangeUser}/>
+                    <input className={errors.user ? "error" : ""} type="text" name="user" value={this.state.user}
+                           onChange={this.handleChange}/>
                 </label>
                 <label>
                     Comment:
-                    <input type="text" name="comment" value={this.state.comment} onChange={this.handleChangeComment}/>
+                    <input className={errors.comment ? "error" : ""} type="text" name="comment"
+                           value={this.state.comment}
+                           onChange={this.handleChange}/>
                 </label>
                 <input type="submit" value="Submit"/>
             </form>
