@@ -15,10 +15,6 @@ class CommentForm extends Component {
     };
 
     handleSubmit = (event) => {
-        const data = {
-            user: this.state.user,
-            comment: this.state.comment
-        };
         this.setState({
             user: '',
             comment: ''
