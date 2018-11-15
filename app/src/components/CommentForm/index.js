@@ -1,13 +1,11 @@
 import React, {Component} from 'react';
-import './AddCommentForm.css'
+import './style.css'
 
-class AddCommentForm extends Component {
+class CommentForm extends Component {
 
     state = {
         user: '',
-        comment: '',
-        userValid: '',
-        commentValid: ''
+        comment: ''
     };
 
     handleChange = (event) => {
@@ -21,7 +19,11 @@ class AddCommentForm extends Component {
             user: this.state.user,
             comment: this.state.comment
         };
-        alert('User: ' + data.user + ', Comment: ' + data.comment);
+        this.setState({
+            user: '',
+            comment: ''
+        });
+
         event.preventDefault();
     };
 
@@ -53,4 +55,4 @@ class AddCommentForm extends Component {
     }
 }
 
-export default AddCommentForm
+export default CommentForm

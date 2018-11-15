@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Comment from './Comment';
 import PropTypes from 'prop-types';
 import toggleOpen from '../decorators/toggleOpen';
-import AddCommentForm from './AddCommentForm';
+import CommentForm from './CommentForm';
 
 class CommentList extends Component {
     static defaultProps = {
@@ -39,8 +39,7 @@ class CommentList extends Component {
                 {comments.map(comment => <li key={comment.id}><Comment comment={comment}/></li>)}
                 <br/>
                 <br/>
-
-                <AddCommentForm/>
+                <CommentForm/>
             </ul>
         )
     }
