@@ -2,8 +2,6 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import Select from 'react-select';
 
-import 'react-select/dist/react-select.css'
-
 class SelectFilter extends Component {
     state = {
         selected: []
@@ -27,7 +25,6 @@ class SelectFilter extends Component {
         return <Select
             options={options}
             value={selected}
-            multi={true}
             onChange={this.handleChange}
         />
     }

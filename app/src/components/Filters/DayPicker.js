@@ -10,8 +10,6 @@ class DayPicker extends Component {
 
     constructor(props) {
         super(props);
-        this.handleFromChange = this.handleFromChange.bind(this);
-        this.handleToChange = this.handleToChange.bind(this);
         this.state = {
             from: undefined,
             to: undefined,
@@ -28,14 +26,14 @@ class DayPicker extends Component {
         }
     }
 
-    handleFromChange(from) {
+    handleFromChange = (from) => {
         // Change the from date and focus the "to" input field
         this.setState({from});
-    }
+    };
 
-    handleToChange(to) {
+    handleToChange = (to) => {
         this.setState({to}, this.showFromMonth);
-    }
+    };
 
     render() {
         const {from, to} = this.state;
