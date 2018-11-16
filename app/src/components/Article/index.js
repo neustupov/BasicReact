@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import CommentList from './CommentList';
+import CommentList from '../CommentList';
 import PropTypes from 'prop-types';
 import {CSSTransitionGroup} from 'react-transition-group';
-import './article.css';
+import './style.css';
 
 class Article extends Component {
 

@@ -25,6 +25,7 @@ class SelectFilter extends Component {
         return <Select
             options={options}
             value={selected}
+            isMulti
             onChange={this.handleChange}
         />
     }
