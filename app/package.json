@@ -13,7 +13,8 @@
     "react-helmet": "^5.2.0",
     "react-scripts": "2.1.1",
     "react-select": "^2.1.1",
-    "react-transition-group": "^1.2.0"
+    "react-transition-group": "^1.2.0",
+    "redux": "^4.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
